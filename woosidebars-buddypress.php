@@ -5,6 +5,8 @@
  * 
  * @package WooSidebars for BuddyPress
  * @subpackage Main
+ *
+ * @todo Only apply plugin for the root (BP) blog when in MS
  */
 
 /**
@@ -206,6 +208,9 @@ final class WooSidebars_BuddyPress {
 	/**
 	 * Return our specific conditions
 	 *
+	 * All available conditions are derived from `bp-core-template.php` and
+	 * `bp_get_the_body_class()` logic. See also ::filter_page_conditions().
+	 *
 	 * @since 1.0.0
 	 *
 	 * @see bp_get_the_body_class()
@@ -299,6 +304,12 @@ final class WooSidebars_BuddyPress {
 						'description' => sprintf( __( 'The displayed member is a %s.', 'woosidebars-buddypress' ), $type->labels['singular_name'] )
 					);
 				}
+
+				// No member type
+				$member_types['bp-member-type-none'] = array(
+					'label'       => __( 'No member type', 'woosidebars-buddypress' ),
+					'description' => __( 'The displayed member has no member type.', 'woosidebars-buddypress' )
+				);
 
 				// Append to members component conditions
 				$conditions['bp-members'] += $member_types;
@@ -737,8 +748,12 @@ final class WooSidebars_BuddyPress {
 			// Member types
 			if ( function_exists( 'bp_get_member_type' ) ) {
 				$types = bp_get_member_type( bp_displayed_user_id(), false );
-				foreach ( $types as $type ) {
-					$conditions[] = "bp-member-type-{$type}";
+				if ( $types ) {
+					foreach ( $types as $type ) {
+						$conditions[] = "bp-member-type-{$type}";
+					}
+				} else {
+					$conditions[] = 'bp-member-type-none';
 				}
 			}
 		}
