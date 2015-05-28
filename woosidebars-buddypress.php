@@ -13,7 +13,7 @@
  * Plugin Name:       WooSidebars for BuddyPress
  * Description:       Enable WooSidebars for BuddyPress pages
  * Plugin URI:        https://github.com/lmoffereins/woosidebars-buddypress/
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Laurens Offereins
  * Author URI:        https://github.com/lmoffereins/
  * Text Domain:       woosidebars-buddypress
@@ -71,7 +71,7 @@ final class WooSidebars_BuddyPress {
 
 		/** Versions **********************************************************/
 
-		$this->version      = '1.0.0';
+		$this->version      = '1.0.1';
 
 		/** Paths *************************************************************/
 

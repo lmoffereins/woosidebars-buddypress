@@ -1,13 +1,13 @@
 === WooSidebars For BuddyPress ===
 Contributors: Offereins
-Tags: woosidebars, buddypress, pages
+Tags: woosidebars, buddypress, conditional, sidebar, pages
 Requires at least: 4.0
 Tested up to: 4.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Enables selecting Woosidebars for BuddyPress pages.
+Enables Woosidebars with BuddyPress page conditions.
 
 == Installation ==
 
@@ -16,6 +16,9 @@ You can download and install WooSidebars For BuddyPress using the built in WordP
 Activate WooSidebars For BuddyPress in the "Plugins" admin panel using the "Activate" link. If you're using WordPress Multisite, you can choose to activate WooSidebars For BuddyPress network wide for full integration with all of your sites.
 
 == Changelog ==
+
+= 1.0.1 =
+* Added condition for a displayed user without a member type
 
 = 1.0.0 =
 * Initial release
