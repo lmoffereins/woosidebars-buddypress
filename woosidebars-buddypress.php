@@ -16,6 +16,7 @@
  * Version:           1.0.1
  * Author:            Laurens Offereins
  * Author URI:        https://github.com/lmoffereins/
+ * Network:           true
  * Text Domain:       woosidebars-buddypress
  * Domain Path:       /languages/
  * GitHub Plugin URI: lmoffereins/woosidebars-buddypress
