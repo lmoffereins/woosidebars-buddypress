@@ -5,8 +5,6 @@
  * 
  * @package WooSidebars for BuddyPress
  * @subpackage Main
- *
- * @todo Only apply plugin for the root (BP) blog when in MS
  */
 
 /**
@@ -102,8 +100,8 @@ final class WooSidebars_BuddyPress {
 	 */
 	private function setup_actions() {
 
-		// Bail when WooSidebars is not active
-		if ( ! class_exists( 'Woo_Sidebars' ) )
+		// Bail when WooSidebars is not active or this is not the root blog
+		if ( ! class_exists( 'Woo_Sidebars' ) || ! bp_is_root_blog() )
 			return;
 
 		// Load textdomain
